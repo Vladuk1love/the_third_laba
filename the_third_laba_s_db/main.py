@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 import uvicorn
 import select
 
-print("aboba")
+
 app = FastAPI(title="Users_Registration")
 
 metadata = sqlalchemy.MetaData()
