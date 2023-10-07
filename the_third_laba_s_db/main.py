@@ -136,11 +136,20 @@ def user_output():
 
     # results = session.query(users.columns).all()
     # return   results
+    output = []
+    select_all_query = sqlalchemy.select(users)
+    print(select_all_query)
+    for row in connection.execute(select_all_query):
+        print(row)
+        temp = [i for i in row]
+        output.append(temp)
+    return output
 
-    select_all_query = sqlalchemy.select(sqlalchemy.Column(users))
-    select_all_results = connection.execute(select_all_query)
-    connection.commit()
-    return(select_all_results)
+
+    # select_all_results = connection.execute(select_all_query)
+    # print(select_all_results)
+    # connection.commit()
+    # return(select_all_results)
 
 
     #
